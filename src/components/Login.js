@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function Login({ onLogin }) {
-  const [username, setUsername] = useState('');
+  // Define state variables for name and password
+  const [name, setName] = useState(''); // Changed from username to name
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  // Handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
       // Make an API call to authenticate the user
       const response = await axios.post('https://qa-test-9di7.onrender.com/login', {
-        username,
+        name, // Send the name field in the API request
         password,
       });
 
@@ -24,11 +26,11 @@ function Login({ onLogin }) {
 
       // Optionally, call onLogin with user data or token
       if (onLogin) {
-        onLogin({ username, token });
+        onLogin({ name, token });
       }
 
       // Clear the form fields
-      setUsername('');
+      setName('');
       setPassword('');
     } catch (error) {
       // Handle authentication errors
@@ -38,15 +40,17 @@ function Login({ onLogin }) {
 
   return (
     <div>
+      <h2>Login Form</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="username">Username</label>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
-            id="username"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            id="name"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
           />
         </div>
 
@@ -58,6 +62,7 @@ function Login({ onLogin }) {
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
         </div>
 
