@@ -226,11 +226,6 @@ The app will be running on http://localhost:3000.
 License
 This project is licensed under the MIT License.
 
-arduino
-Copy code
-
-This format organizes the README into clear sections and provides detailed information about the project’s files, setup, and testing instructions.
-
 
 
 
