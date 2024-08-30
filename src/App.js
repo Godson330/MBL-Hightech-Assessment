@@ -1,5 +1,5 @@
 import React from 'react';
-import NamePasswordForm from './NamePasswordForm'; // Ensure the path to NamePasswordForm is correct
+import NamePasswordForm from './NamePasswordForm'; // Ensure this path is correct
 
 function App() {
   return (
