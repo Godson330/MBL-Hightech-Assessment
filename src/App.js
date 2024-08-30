@@ -1,17 +1,11 @@
 import React from 'react';
-import './App.css';
-import NamePasswordForm from './NamePasswordForm'; // Import your NamePasswordForm component
+import NamePasswordForm from './NamePasswordForm'; // Ensure the path to NamePasswordForm is correct
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Welcome to My React App</h1>
-      </header>
-      <main>
-        {/* Add your NamePasswordForm component */}
-        <NamePasswordForm />
-      </main>
+      <h1>Welcome to My React App</h1>
+      <NamePasswordForm /> {/* This is where the form component is rendered */}
     </div>
   );
 }
